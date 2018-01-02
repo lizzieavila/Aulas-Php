@@ -13,6 +13,7 @@ class pessoa{
 
 $eu = new pessoa();
 $eu->nome ="nome da pessoa";
+$eu->falar();
 
 
 ?>
