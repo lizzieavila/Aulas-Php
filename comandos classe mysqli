@@ -1,0 +1,42 @@
+<?php
+
+$conn = new mysqli("localhost","root","senha","dbphp");
+if ($conn->connect_error){
+	echo"error:".$conn->connect_error;
+}
+
+$stmt = $conn->prepare("INSERT INTO tb_usuarios(deslogin,dessenha)VALUES(?,?)");
+$stmt->bind_param("ss",$login,$pass);
+
+$login = "user";
+$pass = "12345";
+
+$sttm->execute();
+
+$login = "user2";
+$pass = "12345";
+
+$sttm->execute();
+
+//dois ss de duas strings
+
+//s string
+//i inteiro
+//d float
+//b blob
+
+//buscar no banco
+$result = $conn->query("SELECT * FROM tb_usuarios ORDER BY deslogin");
+$data = array();
+while($row = $result->fetch_array()){
+array_push($data,$row);
+	
+}
+
+//transf json
+encho json_encode($data);
+
+//fetch_assoc
+traz so os nomes
+
+?>
